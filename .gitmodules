@@ -1,0 +1,3 @@
+[submodule "handmade_renderer"]
+	path = handmade_renderer
+	url = https://github.com/ajeejuf/Handmade-Renderer.git
