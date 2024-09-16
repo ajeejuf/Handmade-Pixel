@@ -28,4 +28,7 @@ A graphics engine developed in C and OpenGL will create interactive applications
 - Interactive Windows
 - Playground
 
+## Authors
+- Alejandro Fernandez
+- Sydney Lam
 
