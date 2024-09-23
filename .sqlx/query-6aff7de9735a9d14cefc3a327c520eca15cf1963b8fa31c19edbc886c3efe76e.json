@@ -1,0 +1,17 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "\n        INSERT INTO users (id, email, username, password, status)\n        VALUES ($1, $2, $3, $4, 'pending_confirmation')\n        ",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Left": [
+        "Uuid",
+        "Text",
+        "Text",
+        "Text"
+      ]
+    },
+    "nullable": []
+  },
+  "hash": "6aff7de9735a9d14cefc3a327c520eca15cf1963b8fa31c19edbc886c3efe76e"
+}

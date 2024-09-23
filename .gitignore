@@ -1,0 +1,16 @@
+/target
+**/*.rs.bk
+
+Cargo.lock
+
+*.log
+*.rs.bk
+*.swp
+*.swo
+*.DS_Store
+.vscode/
+.idea/
+
+*.out
+*.exe
+*.d
