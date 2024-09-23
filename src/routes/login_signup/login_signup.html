@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" type="text/css" href="/static/index.css">
+
+    <!--  Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Bellefair&family=Barlow:wght@400;700&display=swap"
+          rel="stylesheet">
+
+    <title>Handmade Pixel - Login/Signup</title>
+</head>
+<body class="login-signup">
+    <header class="primary-header flex">
+        <div>
+            <img alt="handmade pixel logo" class="logo">
+        </div>
+        <button class="mobile-nav-toggle" aria-controls="primary-navigation">
+            <span class="sr-only" aria-expanded="false">Menu</span>
+        </button>
+        <nav>
+            <ul id="primary-navigation" data-visible="false" class="primary-navigation
+                underline-indicators flex">
+                <li>
+                    <a class="ff-sans-cond uppercase text-white letter-spacing-2" href="/">
+                        <span aria-hidden="true">00</span>Home
+                    </a>
+                </li>
+                <li>
+                    <a class="ff-sans-cond uppercase text-white letter-spacing-2" href="/design">
+                        <span aria-hidden="true">01</span>Lessons
+                    </a>
+                </li>
+                <li>
+                    <a class="ff-sans-cond uppercase text-white letter-spacing-2" href="#">
+                        <span aria-hidden="true">02</span>Playground
+                    </a>
+                </li>
+                <li class="active">
+                    <a class="ff-sans-cond uppercase text-white letter-spacing-2" href="#">
+                        <span aria-hidden="true">03</span>Login
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="grid-container">
+        <div>
+            <form method="POST">
+                <span class="ff-sans-normal fs-700 uppercase text-white letter-spacing-2">Login</span>
+                <input type="hidden" name="form_type" value="login">
+
+                <div>
+                <label class="ff-sans-cond text-light" for="login-username">Username:</label>
+                <input class="ff-sans-normal text-black" type="text" id="login-username" name="username" placeholder="Username" required>
+                </div>
+
+                <div>
+                <label class="ff-sans-cond text-light" for="login-password">Password:</label>
+                <input class="ff-sans-normal text-black" type="text" id="login-password" name="password" placeholder="Password" required>
+                </div>
+
+                <button type="submit">Login</button>
+            </form>
+        </div>
+        <div>
+            <form method="POST">
+                <span class="ff-sans-normal fs-700 uppercase text-white letter-spacing-2">Signup</span>
+                <input type="hidden" name="form_type" value="signup">
+
+                <div>
+                    <label class="ff-sans-cond text-white" for="email">Email:</label>
+                    <input class="ff-sans-normal text-black" type="text" id="email" name="email" placeholder="Email" required>
+                </div>
+
+                <div>
+                    <label class="ff-sans-cond text-white" for="signup-username">Username:</label>
+                    <input class="ff-sans-normal text-black" type="text" id="signup-username" name="username" placeholder="Username" required>
+                </div>
+
+                <div>
+                    <label class="ff-sans-cond text-white" for="signup-password">Password:</label>
+                    <input class="ff-sans-normal text-black" type="text" id="signup-password" name="password" placeholder="Password" required>
+                </div>
+
+                <button type="submit">Signup</button>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
