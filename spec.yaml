@@ -1,0 +1,42 @@
+name: handmade-pixel
+region: nyc1
+services:
+  - name: handmade-pixel
+    dockerfile_path: Dockerfile
+    source_dir: /
+    github:
+      branch: master
+      deploy_on_push: true
+      repo: ajeejuf/handmade_pixel
+    health_check:
+      http_path: /health_check
+    http_port: 8000
+    instance_count: 1
+    instance_size_slug: basic-xxs
+    routes:
+      - path: /
+    envs:
+      - key: APP_APPLICATION__BASE_URL
+        scope: RUN_TIME
+        value: ${APP_URL}
+      - key: APP_DATABASE__USERNAME
+        scope: RUN_TIME
+        value: ${handmade-db.USERNAME}
+      - key: APP_DATABASE__PASSWORD
+        scope: RUN_TIME
+        value: ${handmade-db.PASSWORD}
+      - key: APP_DATABASE__HOSTNAME
+        scope: RUN_TIME
+        value: ${handmade-db.HOSTNAME}
+      - key: APP_DATABASE__PORT
+        scope: RUN_TIME
+        value: ${handmade-db.PORT}
+      - key: APP_DATABASE__NAME
+        scope: RUN_TIME
+        value: ${handmade-db.DATABASE}
+databases:
+  - engine: PG
+    name: handmade-db
+    num_nodes: 1
+    size: db-s-dev-database
+    version: "14"

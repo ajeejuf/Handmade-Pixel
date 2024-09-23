@@ -1,0 +1,15 @@
+application:
+  port: 8000
+  host: 0.0.0.0
+database:
+  host: "127.0.0.1"
+  port: 5432
+  username: "postgres"
+  password: "password"
+  name: "handmade-db"
+  require_ssl: false
+email_client:
+  base_url: "https://api.postmarkapp.com"
+  sender_email: "alejandro.fernandez@handmade-pixel.com"
+  authorization_token: "19030e85-e5a8-40b6-b1d8-3ae5d0f6d97f"
+  timeout_milliseconds: 10000
