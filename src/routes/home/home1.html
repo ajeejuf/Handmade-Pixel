@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" type="text/css" href="/static/index1.css">
+
+    <!--  Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Bellefair&family=Barlow:wght@400;700&display=swap"
+          rel="stylesheet">
+
+    <title>Handmade Pixel</title>
+</head>
+<body class="home">
+    <header class="primary-header flex">
+        <div>
+            <img alt="handmade pixel logo" class="logo">
+        </div>
+        <button class="mobile-nav-toggle" aria-controls="primary-navigation">
+            <span class="sr-only" aria-expanded="false">Menu</span>
+        </button>
+        <nav>
+            <ul id="primary-navigation" data-visible="false" class="primary-navigation
+            underline-indicators flex">
+                <li class="active">
+                    <a class="ff-sans-cond uppercase text-white letter-spacing-2" href="/">
+                        <span aria-hidden="true">00</span>Home
+                    </a>
+                </li>
+                <li>
+                    <a class="ff-sans-cond uppercase text-white letter-spacing-2" href="/design">
+                        <span aria-hidden="true">01</span>Lessons
+                    </a>
+                </li>
+                <li>
+                    <a class="ff-sans-cond uppercase text-white letter-spacing-2" href="#">
+                        <span aria-hidden="true">02</span>Playground
+                    </a>
+                </li>
+                <li>
+                    <a class="ff-sans-cond uppercase text-white letter-spacing-2" href="/login-signup">
+                        <span aria-hidden="true">03</span>Login
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+</body>
+<script>
+    const nav = document.querySelector(".primary-navigation");
+    const navToggle = document.querySelector(".mobile-nav-toggle");
+
+    navToggle.addEventListener("click", ()=> {
+        const visibility = nav.getAttribute("data-visible");
+        if (visibility === "false") {
+            nav.setAttribute("data-visible", true);
+            navToggle.setAttribute("aria-expanded", true);
+        } else {
+            nav.setAttribute("data-visible", false);
+            navToggle.setAttribute("aria-expanded", false);
+        }
+
+        console.log(nav.getAttribute("data-visible"));
+    })
+</script>
+</html>
