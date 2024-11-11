@@ -1,0 +1,5 @@
+application:
+  host: 0.0.0.0
+  base_url: "http://handmade-pixel.com"
+database:
+  require_ssl: true

@@ -1,0 +1,22 @@
+/target
+**/*.rs.bk
+
+Cargo.lock
+
+*.log
+*.rs.bk
+*.swp
+*.swo
+*.DS_Store
+.vscode/
+.idea/
+
+*.out
+*.exe
+*.d
+
+# Added by cargo
+#
+# already existing elements were commented out
+
+#/target
