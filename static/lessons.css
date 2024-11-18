@@ -1,0 +1,83 @@
+/* Grid container for the sidebar and main content */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 3fr; /* Sidebar: 1, Main: 3 */
+    gap: 1rem;
+    margin: 2rem auto;
+    max-width: 1200px;
+}
+
+/* Full-page styling */
+body {
+    margin: 0;
+    font-family: var(--ff-sans-normal, Arial, sans-serif);
+    color: hsl(var(--clr-dark, 0 0% 20%));
+    line-height: 1.5;
+    background-color: hsl(var(--clr-light, 231 77% 90%));
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: hsl(var(--clr-dark, 230 35% 7%));
+    color: var(--clr-white);
+}
+
+.logo {
+    font-size: var(--fs-600, 1.5rem);
+    font-family: var(--ff-serif, Georgia, serif);
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: hsl(var(--clr-white, 0 0% 100%));
+}
+
+.sidebar {
+    background-color: hsl(var(--clr-light, 231 77% 90%));
+    padding: 1rem;
+    border-right: 1px solid hsl(var(--clr-dark, 230 35% 7%));
+}
+
+.sidebar h2 {
+    font-family: var(--ff-serif, Georgia, serif);
+    font-size: var(--fs-600, 1.5rem);
+    margin-bottom: 1rem;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    margin-bottom: 0.75rem;
+    font-size: var(--fs-400, 1rem);
+}
+
+.main-content {
+    padding: 1rem;
+}
+
+.main-content h2 {
+    font-family: var(--ff-serif, Georgia, serif);
+    font-size: var(--fs-700, 2rem);
+    margin-bottom: 1rem;
+}
+
+.main-content p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+
