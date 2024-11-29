@@ -72,23 +72,36 @@ body {
     margin-bottom: 20px;
 }
 
+/* Sidebar Styles */
 .sidebar ul {
     list-style: none;
+    padding: 0;
 }
 
 .sidebar li {
-    font-size: 1rem;
     margin-bottom: 15px;
-    padding: 10px;
-    border: 1px solid #CC7700;
     border-radius: 5px;
-    background-color: #E1AE8C;
-    transition: background-color 0.3s ease;
+    overflow: hidden; /* Ensures hover effects stay contained */
 }
 
-.sidebar li:hover {
-    background-color: #5C8FD9;
+.sidebar a {
+    display: block; /* Makes the whole container clickable */
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+    padding: 10px;
+    border: 1px solid #CC7700;
+    background-color: #E1AE8C;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 5px;
 }
+
+.sidebar a:hover {
+    background-color: #5C8FD9;
+    color: #ffffff;
+}
+
 
 /* Main Content */
 .main-content {

@@ -6,3 +6,39 @@ pub async  fn lessons() -> HttpResponse {
         .content_type(ContentType::html())
         .body(include_str!("lessons.html"))
 }
+
+pub async  fn lesson1() -> HttpResponse {
+    HttpResponse::Ok()
+        .content_type(ContentType::html())
+        .body(include_str!("lesson1.html"))
+}
+
+pub async  fn lesson2() -> HttpResponse {
+    HttpResponse::Ok()
+        .content_type(ContentType::html())
+        .body(include_str!("lesson2.html"))
+}
+
+pub async  fn lesson3() -> HttpResponse {
+    HttpResponse::Ok()
+        .content_type(ContentType::html())
+        .body(include_str!("lesson3.html"))
+}
+
+pub async  fn lesson4() -> HttpResponse {
+    HttpResponse::Ok()
+        .content_type(ContentType::html())
+        .body(include_str!("lesson4.html"))
+}
+
+pub async  fn lesson5() -> HttpResponse {
+    HttpResponse::Ok()
+        .content_type(ContentType::html())
+        .body(include_str!("lesson5.html"))
+}
+
+pub async  fn lesson6() -> HttpResponse {
+    HttpResponse::Ok()
+        .content_type(ContentType::html())
+        .body(include_str!("lesson6.html"))
+}

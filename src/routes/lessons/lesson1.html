@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="/static/lessons.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js"></script>
+  <title>Lessons - Handmade Pixel</title>
+</head>
+<body>
+<header class="main-header">
+  <h1 class="logo">HANDMADE PIXEL</h1>
+  <nav>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/lessons">Lessons</a></li>
+      <li><a href="/login-signup">Login</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="grid-container">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <h2>UNIT 1</h2>
+    <ul>
+      <li><a href="/lesson1">Lesson 1: What are Metaballs?</a></li>
+      <li><a href="/lesson2">Lesson 2: Foundations</a></li>
+      <li><a href="/lesson3">Lesson 3: Algorithm Basics</a></li>
+      <li><a href="/lesson4">Lesson 4: Algorithm Implementation</a></li>
+      <li><a href="/lesson5">Lesson 5: Optimizing & Rendering</a></li>
+      <li><a href="/lesson6">Lesson 6: Applications</a></li>
+    </ul>
+  </aside>
+
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <h2>LESSON 1: WHAT ARE METABALLS?</h2>
+    <p>Metaballs are a key aspect in computer graphics which allows one to create smooth, organic, fluid-like shapes.
+      These types of shapes are great for making dynamic effects that replicate things in the real world, such as
+      water, lava, or simple blobs.</p>
+    <p>Metaballs are each defined as a scalar field, with its strength decreasing with its distance from the center.</p>
+    <p>The formula for a single metaball is:</p>
+    <div>
+      \[
+      f(x, y) = \frac{r^2}{(x - x_0)^2 + (y - y_0)^2}
+      \]
+    </div>
+    <p>where \( r \) is the radius and \( (x_0, y_0) \) is the center of the metaball.</p>
+
+  </main>
+</div>
+</body>

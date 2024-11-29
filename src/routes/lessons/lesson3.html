@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/static/lessons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js"></script>
+    <title>Lessons - Handmade Pixel</title>
+</head>
+<body>
+<header class="main-header">
+    <h1 class="logo">HANDMADE PIXEL</h1>
+    <nav>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/lessons">Lessons</a></li>
+            <li><a href="/login-signup">Login</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="grid-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h2>UNIT 1</h2>
+        <ul>
+            <li><a href="/lesson1">Lesson 1: What are Metaballs?</a></li>
+            <li><a href="/lesson2">Lesson 2: Foundations</a></li>
+            <li><a href="/lesson3">Lesson 3: Algorithm Basics</a></li>
+            <li><a href="/lesson4">Lesson 4: Algorithm Implementation</a></li>
+            <li><a href="/lesson5">Lesson 5: Optimizing & Rendering</a></li>
+            <li><a href="/lesson6">Lesson 6: Applications</a></li>
+        </ul>
+    </aside>
+
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <h2>LESSON 3: MARCHING SQUARES ALGORITHM BASICS</h2>
+        <h3>Overview</h3>
+        <p>
+            This lesson introduces the Marching Squares algorithm, a critical technique for rendering metaballs.
+            This algorithm identifies the contours of scalar fields by processing a grid and determining where
+            a threshold is crossed.
+        </p>
+
+        <h3>Key Concepts</h3>
+        <ul>
+            <li>
+                <strong>Purpose:</strong> The Marching Squares algorithm detects contours in a 2D scalar field.
+                It does so by evaluating the scalar values at the corners of each grid cell.
+            </li>
+            <li>
+                <strong>Grid Sampling:</strong> The scalar field is divided into a grid of cells, and each cell
+                contains four corners. The algorithm then evaluates the scalar values at each of these corners to
+                decide upon the configuration of the cell.
+            </li>
+            <li>
+                <strong>Threshold Crossing:</strong> The contour of a metaball is formed where the scalar field values
+                meet or surpass a threshold value:
+                <div class="formula">
+                    \( F(x, y) \geq T \)
+                </div>
+            </li>
+            <li>
+                <strong>Cell Configurations:</strong> Each cell can have 1 of 16 possible configurations based on
+                if the scalar values at its corners are above or below the threshold.
+                It is these configurations which determine the contour segments inside of the cell.
+            </li>
+        </ul>
+        <p>     </p>
+        <p>     </p>
+        <h3>Algorithm Steps</h3>
+        <p>The Marching Squares algorithm follows these steps:</p>
+        <ol>
+            <li>
+                Divide the scalar field into a grid of cells.
+            </li>
+            <li>
+                Evaluate the scalar value at each corner of the cell.
+            </li>
+            <li>
+                Determine the configuration of the cell (based on which corners exceed the threshold).
+            </li>
+            <li>
+                Use the configuration to identify edges where the contour intersects the cell.
+                Interpolation could be used to adjust the position of intersections.
+            </li>
+            <li>
+                Draw contour line segments for the cell and proceed.
+            </li>
+        </ol>
+        <p>     </p>
+        <p>     </p>
+        <h3>Practice Exercise</h3>
+        <p>
+            Implement the Marching Squares algorithm for a simple scalar field.
+            Visualize the grid, calculate the scalar values at each corner, and identify the contour based on a threshold.
+        </p>
+    </main>
+
+</div>
+</body>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/static/lessons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js"></script>
+    <title>Lessons - Handmade Pixel</title>
+</head>
+<body>
+<header class="main-header">
+    <h1 class="logo">HANDMADE PIXEL</h1>
+    <nav>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/lessons">Lessons</a></li>
+            <li><a href="/login-signup">Login</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="grid-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h2>UNIT 1</h2>
+        <ul>
+            <li><a href="/lesson1">Lesson 1: What are Metaballs?</a></li>
+            <li><a href="/lesson2">Lesson 2: Foundations</a></li>
+            <li><a href="/lesson3">Lesson 3: Algorithm Basics</a></li>
+            <li><a href="/lesson4">Lesson 4: Algorithm Implementation</a></li>
+            <li><a href="/lesson5">Lesson 5: Optimizing & Rendering</a></li>
+            <li><a href="/lesson6">Lesson 6: Applications</a></li>
+        </ul>
+    </aside>
+
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <h2>LESSON 4: IMPLEMENTING THE MARCHING SQUARES ALGORITHM</h2>
+        <h3>Overview</h3>
+        <p>
+            This lesson focuses on implementing the Marching Squares algorithm for metaballs.
+            It will discuss how to systematically process the scalar field, interpolate edges for precise contours,
+            and connect points to render smooth metaball shapes.
+        </p>
+
+        <h3>Key Concepts</h3>
+        <ul>
+            <li>
+                <strong>Grid Sampling:</strong> Divide the scalar field into a grid of cells,
+                calculating scalar values at each corner. This is the basis for determining contours.
+            </li>
+            <li>
+                <strong>Edge Interpolation:</strong> Determine the exact position of the contour on a cell’s
+                edge by linearly interpolating between corner values:
+                <div class="formula">
+                    \( x = x_1 + \frac{T - F(x_1, y_1)}{F(x_2, y_2) - F(x_1, y_1)} \)
+                </div>
+                Here, \((x_1, y_1)\) and \((x_2, y_2)\) are the endpoints of the edge, and \(T\) is the threshold value.
+            </li>
+            <li>
+                <strong>Contour Drawing:</strong> Use the interpolated points to connect contour segments within
+                each cell and form a continuous boundary for the metaballs.
+            </li>
+        </ul>
+
+        <h3>Algorithm Steps</h3>
+        <p>The steps for implementing the Marching Squares algorithm are as follows:</p>
+        <ol>
+            <li>Divide the scalar field into a grid of cells.</li>
+            <li>For each cell, evaluate the scalar values at its corners.</li>
+            <li>Determine the cell configuration using a lookup table based on the threshold comparison.</li>
+            <li>Interpolate edge positions for greater precision.</li>
+            <li>Connect the interpolated points to draw the contour for the cell.</li>
+            <li>Repeat for all cells to form the complete contour of the metaballs.</li>
+        </ol>
+
+        <h3>Applications</h3>
+        <ul>
+            <li><strong>Dynamic Contours:</strong> Use the algorithm to render metaballs that move and
+                blend in real time.</li>
+            <li><strong>Fluid Simulations:</strong> Extend the technique to represent fluid-like behaviors for
+                games or visualizations.</li>
+        </ul>
+
+        <h3>Practice Exercise</h3>
+        <p>
+            Implement the Marching Squares algorithm to render a grid of metaballs.
+            Use edge interpolation to ensure smooth transitions and visualize how the contours change with
+            different threshold values.
+        </p>
+    </main>
+</div>
+</body>
