@@ -83,7 +83,7 @@ fn run(
             .route("/health_check", web::get().to(health_check))
             .route("/", web::get().to(home))
             .route("/1", web::get().to(home1))
-            .route("/design", web::get().to(lessons))
+            .route("/lessons", web::get().to(lessons))
             .route("/login-signup", web::get().to(login_signup_form))
             .route("/login-signup", web::post().to(login_signup))
             .route("/login-signup/confirm", web::get().to(confirm))
