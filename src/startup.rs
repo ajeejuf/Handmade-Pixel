@@ -1,5 +1,5 @@
 
-use crate::routes::{ health_check, home, home1, lessons, login_signup_form, login_signup, confirm, learn_more};
+use crate::routes::{ health_check, home, home1, lessons, lesson1, lesson2, lesson3, lesson4, lesson5, lesson6, login_signup_form, login_signup, confirm, learn_more};
 use actix_files::Files;
 use actix_web::web::Data;
 use actix_web::{web, App, HttpServer};
@@ -84,6 +84,12 @@ fn run(
             .route("/", web::get().to(home))
             .route("/1", web::get().to(home1))
             .route("/lessons", web::get().to(lessons))
+            .route("/lesson1", web::get().to(lesson1))
+            .route("/lesson2", web::get().to(lesson2))
+            .route("/lesson3", web::get().to(lesson3))
+            .route("/lesson4", web::get().to(lesson4))
+            .route("/lesson5", web::get().to(lesson5))
+            .route("/lesson6", web::get().to(lesson6))
             .route("/login-signup", web::get().to(login_signup_form))
             .route("/login-signup", web::post().to(login_signup))
             .route("/login-signup/confirm", web::get().to(confirm))

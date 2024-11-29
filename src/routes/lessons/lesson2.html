@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/static/lessons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js"></script>
+    <title>Lessons - Handmade Pixel</title>
+</head>
+<body>
+<header class="main-header">
+    <h1 class="logo">HANDMADE PIXEL</h1>
+    <nav>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/lessons">Lessons</a></li>
+            <li><a href="/login-signup">Login</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="grid-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h2>UNIT 1</h2>
+        <ul>
+            <li><a href="/lesson1">Lesson 1: What are Metaballs?</a></li>
+            <li><a href="/lesson2">Lesson 2: Foundations</a></li>
+            <li><a href="/lesson3">Lesson 3: Algorithm Basics</a></li>
+            <li><a href="/lesson4">Lesson 4: Algorithm Implementation</a></li>
+            <li><a href="/lesson5">Lesson 5: Optimizing & Rendering</a></li>
+            <li><a href="/lesson6">Lesson 6: Applications</a></li>
+        </ul>
+    </aside>
+
+
+    <!-- Main Content -->
+    <!-- Main Content -->
+    <main class="main-content">
+        <h2>LESSON 2: MATHEMATICAL FOUNDATIONS</h2>
+        <h3>Overview</h3>
+        <p>
+            This lesson will explore the mathematical principles behind metaballs, focusing on how they are defined
+            and interact in a scalar field.
+        </p>
+
+        <h3>Key Concepts</h3>
+        <ul>
+            <li>
+                <strong>Scalar Fields:</strong> Metaballs are defined by scalar fields that assign values to points in space.
+                Their strength diminishes as the distance from the metaball's center increases:
+                <div class="formula">
+                    \( f(x, y) = \frac{r^2}{(x - x_0)^2 + (y - y_0)^2} \)
+
+                </div>
+            </li>
+            <p>        </p>
+            <li>
+                <strong>Combining Metaballs:</strong> Combine metaballs by summing their scalar fields:
+                <div class="formula">
+                    \( F(x, y) = \sum_{i=1}^n f_i(x, y) \)
+                </div>
+            </li>
+            <p>        </p>
+            <li>
+                <strong>Thresholding:</strong> A visible contour is formed where the scalar field exceeds a threshold value:
+                <div class="formula">
+                    \( F(x, y) \geq T \)
+                </div>
+            </li>
+            <p>        </p>
+        </ul>
+        <p>        </p>
+        <p>        </p>
+        <h3>Applications</h3>
+        <ul>
+            <li><strong>Blending Effects:</strong> Smoothly combine metaballs by adjusting their positions and the threshold value.</li>
+            <li><strong>Parameter Control:</strong> Experiment with radii (\( r \)) and thresholds (\( T \)) to influence shape and size.</li>
+        </ul>
+        <p>        </p>
+        <p>        </p>
+        <h3>Practice Exercise</h3>
+        <p>
+            Calculate and visualize the scalar field for two metaballs. Adjust their positions and observe the
+            blending behavior.
+        </p>
+    </main>
+</div>
+</body>
