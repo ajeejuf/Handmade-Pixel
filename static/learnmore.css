@@ -1,0 +1,124 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #ffffff;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: white;
+    border-bottom: 2px solid #333;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #CC7700;
+}
+
+/* Main Content Layout */
+.grid-container {
+    display: grid;
+    margin: 100px auto;
+    max-width: 900px;
+    padding: 0 20px;
+}
+
+/* Main Content */
+.main-content h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.main-content h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 20px 0 10px;
+    color: #5C8FD9; /* Accent color for headings */
+}
+
+.main-content p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.main-content ul {
+    list-style: disc inside;
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+
+.main-content li {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+/* Buttons */
+.button-container {
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #CC7700;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #5C8FD9;
+    transform: scale(1.05);
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px 0;
+    background-color: #f9f9f9;
+    color: #777;
+    font-size: 0.9rem;
+    border-top: 1px solid #ddd;
+}
