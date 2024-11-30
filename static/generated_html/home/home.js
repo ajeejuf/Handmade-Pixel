@@ -39,7 +39,7 @@ if (ENVIRONMENT_IS_NODE) {
 
 // --pre-jses are emitted after the Module integration code, so that they can
 // refer to Module (if they choose; they can also define Module)
-// include: C:\Users\f0710\AppData\Local\Temp\tmpj9zoe4uw.js
+// include: C:\Users\f0710\AppData\Local\Temp\tmpx4pk7z9v.js
 
   if (!Module.expectedDataFileDownloads) {
     Module.expectedDataFileDownloads = 0;
@@ -220,25 +220,25 @@ Module['FS_createPath']("/data/shaders", "junk", true, true);
     }
 
     }
-    loadPackage({"files": [{"filename": "/data/fonts/hack/Hack-Bold.ttf", "start": 0, "end": 317628}, {"filename": "/data/fonts/hack/Hack-BoldItalic.ttf", "start": 317628, "end": 639916}, {"filename": "/data/fonts/hack/Hack-Italic.ttf", "start": 639916, "end": 956072}, {"filename": "/data/fonts/hack/Hack-Regular.ttf", "start": 956072, "end": 1265480}, {"filename": "/data/shaders/circle.wgsl", "start": 1265480, "end": 1266950}, {"filename": "/data/shaders/clear.wgsl", "start": 1266950, "end": 1267263}, {"filename": "/data/shaders/framebuffer.wgsl", "start": 1267263, "end": 1267846}, {"filename": "/data/shaders/gaussian_blur.wgsl", "start": 1267846, "end": 1268975}, {"filename": "/data/shaders/gpu_metaballs.wgsl", "start": 1268975, "end": 1270128}, {"filename": "/data/shaders/grid.wgsl", "start": 1270128, "end": 1270691}, {"filename": "/data/shaders/junk/frag.glsl", "start": 1270691, "end": 1271869}, {"filename": "/data/shaders/junk/inst_frag.glsl", "start": 1271869, "end": 1274193}, {"filename": "/data/shaders/junk/inst_vert.glsl", "start": 1274193, "end": 1275218}, {"filename": "/data/shaders/junk/planet_frag.glsl", "start": 1275218, "end": 1277540}, {"filename": "/data/shaders/junk/planet_vert.glsl", "start": 1277540, "end": 1278565}, {"filename": "/data/shaders/junk/sun_frag.glsl", "start": 1278565, "end": 1279661}, {"filename": "/data/shaders/junk/sun_vert.glsl", "start": 1279661, "end": 1280127}, {"filename": "/data/shaders/junk/vert.glsl", "start": 1280127, "end": 1280627}, {"filename": "/data/shaders/metaball_distance_field.wgsl", "start": 1280627, "end": 1281585}, {"filename": "/data/shaders/metaball_filter.wgsl", "start": 1281585, "end": 1282345}, {"filename": "/data/shaders/metaballs.wgsl", "start": 1282345, "end": 1283250}, {"filename": "/data/shaders/render_circle.wgsl", "start": 1283250, "end": 1284161}, {"filename": "/data/shaders/shader.wgsl", "start": 1284161, "end": 1284863}, {"filename": "/data/shaders/text_test.wgsl", "start": 1284863, "end": 1285621}, {"filename": "/ems_wgpu.wasm", "start": 1285621, "end": 1344860}, {"filename": "/metaballs.wasm", "start": 1344860, "end": 1408684}, {"filename": "/texture_metaballs.wasm", "start": 1408684, "end": 1472895}], "remote_package_size": 1472895});
+    loadPackage({"files": [{"filename": "/data/fonts/hack/Hack-Bold.ttf", "start": 0, "end": 317628}, {"filename": "/data/fonts/hack/Hack-BoldItalic.ttf", "start": 317628, "end": 639916}, {"filename": "/data/fonts/hack/Hack-Italic.ttf", "start": 639916, "end": 956072}, {"filename": "/data/fonts/hack/Hack-Regular.ttf", "start": 956072, "end": 1265480}, {"filename": "/data/shaders/circle.wgsl", "start": 1265480, "end": 1266950}, {"filename": "/data/shaders/clear.wgsl", "start": 1266950, "end": 1267263}, {"filename": "/data/shaders/framebuffer.wgsl", "start": 1267263, "end": 1267846}, {"filename": "/data/shaders/gaussian_blur.wgsl", "start": 1267846, "end": 1268975}, {"filename": "/data/shaders/gpu_metaballs.wgsl", "start": 1268975, "end": 1270128}, {"filename": "/data/shaders/grid.wgsl", "start": 1270128, "end": 1270691}, {"filename": "/data/shaders/junk/frag.glsl", "start": 1270691, "end": 1271869}, {"filename": "/data/shaders/junk/inst_frag.glsl", "start": 1271869, "end": 1274193}, {"filename": "/data/shaders/junk/inst_vert.glsl", "start": 1274193, "end": 1275218}, {"filename": "/data/shaders/junk/planet_frag.glsl", "start": 1275218, "end": 1277540}, {"filename": "/data/shaders/junk/planet_vert.glsl", "start": 1277540, "end": 1278565}, {"filename": "/data/shaders/junk/sun_frag.glsl", "start": 1278565, "end": 1279661}, {"filename": "/data/shaders/junk/sun_vert.glsl", "start": 1279661, "end": 1280127}, {"filename": "/data/shaders/junk/vert.glsl", "start": 1280127, "end": 1280627}, {"filename": "/data/shaders/metaball_distance_field.wgsl", "start": 1280627, "end": 1281585}, {"filename": "/data/shaders/metaball_filter.wgsl", "start": 1281585, "end": 1282345}, {"filename": "/data/shaders/metaballs.wgsl", "start": 1282345, "end": 1283250}, {"filename": "/data/shaders/render_circle.wgsl", "start": 1283250, "end": 1284161}, {"filename": "/data/shaders/shader.wgsl", "start": 1284161, "end": 1284863}, {"filename": "/data/shaders/text_test.wgsl", "start": 1284863, "end": 1285621}, {"filename": "/ems_wgpu.wasm", "start": 1285621, "end": 1344625}, {"filename": "/metaballs.wasm", "start": 1344625, "end": 1404596}, {"filename": "/texture_metaballs.wasm", "start": 1404596, "end": 1481437}], "remote_package_size": 1481437});
 
   })();
 
-// end include: C:\Users\f0710\AppData\Local\Temp\tmpj9zoe4uw.js
-// include: C:\Users\f0710\AppData\Local\Temp\tmpkfytj6e5.js
+// end include: C:\Users\f0710\AppData\Local\Temp\tmpx4pk7z9v.js
+// include: C:\Users\f0710\AppData\Local\Temp\tmpcz6t1ldg.js
 
     // All the pre-js content up to here must remain later on, we need to run
     // it.
     if (Module['$ww'] || (typeof ENVIRONMENT_IS_PTHREAD != 'undefined' && ENVIRONMENT_IS_PTHREAD)) Module['preRun'] = [];
     var necessaryPreJSTasks = Module['preRun'].slice();
-  // end include: C:\Users\f0710\AppData\Local\Temp\tmpkfytj6e5.js
-// include: C:\Users\f0710\AppData\Local\Temp\tmpnz7vb2ik.js
+  // end include: C:\Users\f0710\AppData\Local\Temp\tmpcz6t1ldg.js
+// include: C:\Users\f0710\AppData\Local\Temp\tmp7wtc2o2t.js
 
     if (!Module['preRun']) throw 'Module.preRun should exist because file support used it; did a pre-js delete it?';
     necessaryPreJSTasks.forEach((task) => {
       if (Module['preRun'].indexOf(task) < 0) throw 'All preRun tasks that exist before user pre-js code should remain after; did you replace Module or modify Module.preRun?';
     });
-  // end include: C:\Users\f0710\AppData\Local\Temp\tmpnz7vb2ik.js
+  // end include: C:\Users\f0710\AppData\Local\Temp\tmp7wtc2o2t.js
 
 
 // Sometimes an existing Module object exists with properties
@@ -1443,7 +1443,7 @@ var ASM_CONSTS = {
   
   
   
-  var ___heap_base = 33567312;
+  var ___heap_base = 33568464;
   
   var zeroMemory = (address, size) => {
       HEAPU8.fill(0, address, address + size);
@@ -1603,7 +1603,7 @@ var ASM_CONSTS = {
   
   /** @type {WebAssembly.Table} */
   var wasmTable = new WebAssembly.Table({
-    'initial': 13,
+    'initial': 16,
     'element': 'anyfunc'
   });
   ;
@@ -2355,11 +2355,11 @@ var ASM_CONSTS = {
 
   var ___memory_base = new WebAssembly.Global({'value': 'i32', 'mutable': false}, 1024);
 
-  var ___stack_high = 33567312;
+  var ___stack_high = 33568464;
 
-  var ___stack_low = 12880;
+  var ___stack_low = 14032;
 
-  var ___stack_pointer = new WebAssembly.Global({'value': 'i32', 'mutable': true}, 33567312);
+  var ___stack_pointer = new WebAssembly.Global({'value': 'i32', 'mutable': true}, 33568464);
 
   /** @suppress {duplicate } */
   function syscallGetVarargI() {
@@ -7917,6 +7917,120 @@ var ASM_CONSTS = {
       },
   };
 
+  var getCFunc = (ident) => {
+      var func = Module['_' + ident]; // closure exported function
+      assert(func, 'Cannot call unknown function ' + ident + ', make sure it is exported');
+      return func;
+    };
+  
+  var writeArrayToMemory = (array, buffer) => {
+      assert(array.length >= 0, 'writeArrayToMemory array must have a length (should be an array or typed array)')
+      HEAP8.set(array, buffer);
+    };
+  
+  
+  
+  
+  
+  
+  
+  
+    /**
+     * @param {string|null=} returnType
+     * @param {Array=} argTypes
+     * @param {Arguments|Array=} args
+     * @param {Object=} opts
+     */
+  var ccall = (ident, returnType, argTypes, args, opts) => {
+      // For fast lookup of conversion functions
+      var toC = {
+        'string': (str) => {
+          var ret = 0;
+          if (str !== null && str !== undefined && str !== 0) { // null string
+            // at most 4 bytes per UTF-8 code point, +1 for the trailing '\0'
+            ret = stringToUTF8OnStack(str);
+          }
+          return ret;
+        },
+        'array': (arr) => {
+          var ret = stackAlloc(arr.length);
+          writeArrayToMemory(arr, ret);
+          return ret;
+        }
+      };
+  
+      function convertReturnValue(ret) {
+        if (returnType === 'string') {
+          
+          return UTF8ToString(ret);
+        }
+        if (returnType === 'boolean') return Boolean(ret);
+        return ret;
+      }
+  
+      var func = getCFunc(ident);
+      var cArgs = [];
+      var stack = 0;
+      assert(returnType !== 'array', 'Return type should not be "array".');
+      if (args) {
+        for (var i = 0; i < args.length; i++) {
+          var converter = toC[argTypes[i]];
+          if (converter) {
+            if (stack === 0) stack = stackSave();
+            cArgs[i] = converter(args[i]);
+          } else {
+            cArgs[i] = args[i];
+          }
+        }
+      }
+      // Data for a previous async operation that was in flight before us.
+      var previousAsync = Asyncify.currData;
+      var ret = func(...cArgs);
+      function onDone(ret) {
+        runtimeKeepalivePop();
+        if (stack !== 0) stackRestore(stack);
+        return convertReturnValue(ret);
+      }
+    var asyncMode = opts?.async;
+  
+      // Keep the runtime alive through all calls. Note that this call might not be
+      // async, but for simplicity we push and pop in all calls.
+      runtimeKeepalivePush();
+      if (Asyncify.currData != previousAsync) {
+        // A change in async operation happened. If there was already an async
+        // operation in flight before us, that is an error: we should not start
+        // another async operation while one is active, and we should not stop one
+        // either. The only valid combination is to have no change in the async
+        // data (so we either had one in flight and left it alone, or we didn't have
+        // one), or to have nothing in flight and to start one.
+        assert(!(previousAsync && Asyncify.currData), 'We cannot start an async operation when one is already flight');
+        assert(!(previousAsync && !Asyncify.currData), 'We cannot stop an async operation in flight');
+        // This is a new async operation. The wasm is paused and has unwound its stack.
+        // We need to return a Promise that resolves the return value
+        // once the stack is rewound and execution finishes.
+        assert(asyncMode, 'The call to ' + ident + ' is running asynchronously. If this was intended, add the async option to the ccall/cwrap call.');
+        return Asyncify.whenDone().then(onDone);
+      }
+  
+      ret = onDone(ret);
+      // If this is an async ccall, ensure we return a promise
+      if (asyncMode) return Promise.resolve(ret);
+      return ret;
+    };
+
+  
+  
+    /**
+     * @param {string=} returnType
+     * @param {Array=} argTypes
+     * @param {Object=} opts
+     */
+  var cwrap = (ident, returnType, argTypes, opts) => {
+      return (...args) => ccall(ident, returnType, argTypes, args, opts);
+    };
+
+
+
   var FS_createPath = FS.createPath;
 
 
@@ -9429,14 +9543,17 @@ var wasmImports = {
 var wasmExports = createWasm();
 var ___wasm_call_ctors = createExportWrapper('__wasm_call_ctors', 0);
 var ___wasm_apply_data_relocs = createExportWrapper('__wasm_apply_data_relocs', 0);
-var _malloc = createExportWrapper('malloc', 1);
+var _malloc = Module['_malloc'] = createExportWrapper('malloc', 1);
 var _free = Module['_free'] = createExportWrapper('free', 1);
 var _memcpy = Module['_memcpy'] = createExportWrapper('memcpy', 3);
 var _memset = Module['_memset'] = createExportWrapper('memset', 3);
+var _memcmp = Module['_memcmp'] = createExportWrapper('memcmp', 3);
 var _realloc = Module['_realloc'] = createExportWrapper('realloc', 2);
+var _calloc = Module['_calloc'] = createExportWrapper('calloc', 2);
 var _strlen = Module['_strlen'] = createExportWrapper('strlen', 1);
-var _main = Module['_main'] = createExportWrapper('__main_argc_argv', 2);
 var _fprintf = Module['_fprintf'] = createExportWrapper('fprintf', 3);
+var _call_registered_function = Module['_call_registered_function'] = createExportWrapper('call_registered_function', 4);
+var _main = Module['_main'] = createExportWrapper('__main_argc_argv', 2);
 var _acosf = Module['_acosf'] = createExportWrapper('acosf', 1);
 var _atanf = Module['_atanf'] = createExportWrapper('atanf', 1);
 var ___funcs_on_exit = createExportWrapper('__funcs_on_exit', 0);
@@ -9461,9 +9578,11 @@ var _emscripten_stack_get_current = () => (_emscripten_stack_get_current = wasmE
 var _wgpuCreateInstance = Module['_wgpuCreateInstance'] = createExportWrapper('wgpuCreateInstance', 1);
 var _wgpuSurfaceGetCapabilities = Module['_wgpuSurfaceGetCapabilities'] = createExportWrapper('wgpuSurfaceGetCapabilities', 3);
 var _wgpuSurfaceCapabilitiesFreeMembers = Module['_wgpuSurfaceCapabilitiesFreeMembers'] = createExportWrapper('wgpuSurfaceCapabilitiesFreeMembers', 1);
+var dynCall_iiii = Module['dynCall_iiii'] = createExportWrapper('dynCall_iiii', 4);
+var dynCall_iiiii = Module['dynCall_iiiii'] = createExportWrapper('dynCall_iiiii', 5);
+var dynCall_iii = Module['dynCall_iii'] = createExportWrapper('dynCall_iii', 3);
 var dynCall_viiii = Module['dynCall_viiii'] = createExportWrapper('dynCall_viiii', 5);
 var dynCall_vi = Module['dynCall_vi'] = createExportWrapper('dynCall_vi', 2);
-var dynCall_iiii = Module['dynCall_iiii'] = createExportWrapper('dynCall_iiii', 4);
 var dynCall_jiji = Module['dynCall_jiji'] = createExportWrapper('dynCall_jiji', 5);
 var dynCall_ii = Module['dynCall_ii'] = createExportWrapper('dynCall_ii', 2);
 var dynCall_iidiiii = Module['dynCall_iidiiii'] = createExportWrapper('dynCall_iidiiii', 7);
@@ -9473,13 +9592,17 @@ var _asyncify_start_unwind = createExportWrapper('asyncify_start_unwind', 1);
 var _asyncify_stop_unwind = createExportWrapper('asyncify_stop_unwind', 0);
 var _asyncify_start_rewind = createExportWrapper('asyncify_start_rewind', 1);
 var _asyncify_stop_rewind = createExportWrapper('asyncify_stop_rewind', 0);
-var _stderr = Module['_stderr'] = 11048;
+var _stderr = Module['_stderr'] = 12200;
 
 // include: postamble.js
 // === Auto-generated postamble setup entry stuff ===
 
 Module['addRunDependency'] = addRunDependency;
 Module['removeRunDependency'] = removeRunDependency;
+Module['ccall'] = ccall;
+Module['cwrap'] = cwrap;
+Module['setValue'] = setValue;
+Module['getValue'] = getValue;
 Module['FS_createPreloadedFile'] = FS_createPreloadedFile;
 Module['FS_unlink'] = FS_unlink;
 Module['FS_createPath'] = FS_createPath;
@@ -9518,9 +9641,6 @@ var missingLibrarySymbols = [
   'STACK_ALIGN',
   'POINTER_SIZE',
   'ASSERTIONS',
-  'getCFunc',
-  'ccall',
-  'cwrap',
   'removeFunction',
   'intArrayToString',
   'AsciiToString',
@@ -9530,7 +9650,6 @@ var missingLibrarySymbols = [
   'UTF32ToString',
   'stringToUTF32',
   'lengthBytesUTF32',
-  'writeArrayToMemory',
   'registerWheelEventCallback',
   'registerUiEventCallback',
   'registerFocusEventCallback',
@@ -9673,6 +9792,7 @@ var unexportedSymbols = [
   'mmapAlloc',
   'wasmTable',
   'noExitRuntime',
+  'getCFunc',
   'uleb128Encode',
   'sigToWasmTypes',
   'generateFuncType',
@@ -9688,8 +9808,6 @@ var unexportedSymbols = [
   'strLen',
   'reSign',
   'formatString',
-  'setValue',
-  'getValue',
   'PATH',
   'PATH_FS',
   'UTF8Decoder',
@@ -9703,6 +9821,7 @@ var unexportedSymbols = [
   'UTF16Decoder',
   'stringToNewUTF8',
   'stringToUTF8OnStack',
+  'writeArrayToMemory',
   'JSEvents',
   'registerKeyEventCallback',
   'specialHTMLTargets',
@@ -9825,7 +9944,7 @@ function stackCheckInit() {
   // This is normally called automatically during __wasm_call_ctors but need to
   // get these values before even running any of the ctors so we call it redundantly
   // here.
-  _emscripten_stack_set_limits(33567312 , 12880);
+  _emscripten_stack_set_limits(33568464 , 14032);
   // TODO(sbc): Move writeStackCookie to native to to avoid this.
   writeStackCookie();
 }
