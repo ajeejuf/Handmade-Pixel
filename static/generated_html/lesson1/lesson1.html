@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="/static/lessons.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js"></script>
+  <title>Lessons - Handmade Pixel</title>
+</head>
+<body>
+<header class="main-header">
+  <h1 class="logo">HANDMADE PIXEL</h1>
+  <nav>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/lessons">Lessons</a></li>
+      <li><a href="/login-signup">Login</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="grid-container">
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="sidebar-icon">
+      <div class="line1"></div>
+      <div class="line2"></div>
+      <div class="line3"></div>
+    </div>
+
+    <div class="sidebar-box">
+      <h2>UNIT 1</h2>
+      <ul>
+        <li><a href="#section1">Section 1: What are Metaballs?</a></li>
+        <li><a href="#section2">Section 2: Foundations</a></li>
+        <li><a href="#section3">Section 3: Algorithm Basics</a></li>
+        <li><a href="#section4">Section 4: Algorithm Implementation</a></li>
+        <li><a href="#section5">Section 5: Optimizing & Rendering</a></li>
+        <li><a href="#section6">Section 6: Applications</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="sec-container">
+    <section class="sec" id="section1">
+      <h2 class="lesson-title">METABALLS</h2>
+
+      <div class="lesson-demo-container">
+        <canvas tabindex="0" class="lesson-demo" id="intro-demo" default-wasm="metaballs" width="1000" height="600"></canvas>
+      </div>
+      <button type="button" >Click</button>
+
+      <div class="lesson-text">
+        There's is just a natural fascination when looking at a computer generate an organic
+        simulation. Be it fluids sloshing in a clear container, smoke plumbing from a fire, or
+        amorphous blobs melding together on the screen, these effects just make you wonder: how
+        does this even work?
+      </div>
+      <div class="lesson-text">
+        At first glance, this simulation seems impossible to get working without hundreds of lines
+        of complex code, but in reality, some geometry and a short shader program is all you need
+        to get this thing running.
+      </div>
+      <div class="lesson-text">
+        Enough with the exposition, lets get right into how one would go about making this.
+      </div>
+    </section>
+    <section class="sec" id="section2">Section 2</section>
+    <section class="sec" id="section3">Section 3</section>
+    <section class="sec" id="section4">Section 4</section>
+    <section class="sec" id="section5">Section 5</section>
+    <section class="sec" id="section6">Section 6</section>
+  </div>
+</div>
+</body>
+<script type='text/javascript'>
+  let icon = document.querySelector(".sidebar-icon");
+  let box = document.querySelector(".sidebar-box");
+  let sections = document.querySelector(".sec-container");
+  let canvases = document.querySelectorAll(".lesson-demo");
+
+  const originalSize = {};
+  canvases.forEach(canvas => {
+    originalSize[canvas.id] = canvas.width
+  });
+
+  const observer = new ResizeObserver(entries => {
+    for (let entry of entries) {
+      const { width } = entry.contentRect;
+      const target = entry.target;
+      const canvases = target.querySelectorAll(".lesson-demo");
+
+      canvases.forEach(canvas => {
+        if (canvas.width > width) {
+          let aspect_ratio = canvas.height / canvas.width;
+          canvas.width = width;
+          canvas.height = width * aspect_ratio;
+        }
+        else if (canvas.width < originalSize[canvas.id])
+        {
+          let aspect_ratio = canvas.height / canvas.width;
+          canvas.width = width;
+          canvas.height = width * aspect_ratio;
+        }
+        else
+        {
+          let aspect_ratio = canvas.height / canvas.width;
+          canvas.width = originalSize[canvas.id];
+          canvas.height = originalSize[canvas.id] * aspect_ratio;
+        }
+      });
+    }
+  })
+
+  observer.observe(sections);
+
+  icon.onclick = function() {
+    icon.classList.toggle("active");
+    box.classList.toggle("active");
+
+    let secStyle = getComputedStyle(sections)
+    if (parseInt(secStyle.marginLeft) > 0)
+      sections.style.marginLeft = "0px";
+    else
+      sections.style.marginLeft = "300px";
+  }
+
+  document.addEventListener('click', (e) => {
+    if (!icon.contains(e.target) && !box.contains(e.target)) {
+      icon.classList.remove("active");
+      box.classList.remove("active");
+      sections.style.marginLeft = "0px";
+    }
+    console.log('Click event target:', e.target);
+  }, false);
+</script>
+<script type='text/javascript'>
+  let pause_demo = 0;
+  let handleUserInput = null;
+
+  var Module = {
+    locateFile: function(path) {
+      // Custom logic to resolve the path
+      if (path.endsWith('.js') || path.endsWith('.data') || path.endsWith('.wasm')) {
+        return '/static/generated_html/lesson1/' + path;
+      }
+      return path;
+    },
+    canvases: (() => {
+      return document.querySelectorAll('canvas');
+    })(),
+    arguments: [],
+  };
+
+  Module.onRuntimeInitialized = function() {
+    handleUserInput = Module.cwrap('call_registered_function', null, ['string', 'string', 'number', 'number']);
+
+    Module.canvases.forEach(canvas => {
+      Module.arguments.push(canvas.id);
+      Module.arguments.push(canvas.getAttribute('default-wasm'));
+    });
+
+    let canvas = document.querySelector("#intro-demo");
+
+    setTimeout(() => {
+      const resPtr = Module._malloc(4);
+      Module.setValue(resPtr, canvas.width, 'i32');
+      handleUserInput(canvas.id, 'set_res', null, resPtr);
+      Module._free(resPtr);
+    }, 100)
+
+    canvas.addEventListener('click', () => {
+      pause_demo = 1 - pause_demo;
+
+      const ptr = Module._malloc(4);
+      Module.setValue(ptr, pause_demo, 'i32');
+      handleUserInput(canvas.id, 'set_pause', null, ptr);
+
+      Module._free(ptr);
+
+      console.log("click");
+    }, false);
+
+    console.log(Module.arguments);
+  }
+</script>
+<base href="/static/generated_html/lesson1/">
+<script async type="text/javascript" src="lesson1.js"></script>
+</html>

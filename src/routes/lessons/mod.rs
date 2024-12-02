@@ -10,7 +10,7 @@ pub async  fn lessons() -> HttpResponse {
 pub async  fn lesson1() -> HttpResponse {
     HttpResponse::Ok()
         .content_type(ContentType::html())
-        .body(include_str!("lesson1.html"))
+        .body(include_str!("../../../static/generated_html/lesson1/lesson1.html"))
 }
 
 pub async  fn lesson2() -> HttpResponse {
