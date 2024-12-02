@@ -8,7 +8,7 @@
     <title>Handmade Pixel</title>
 </head>
 <body>
-<header class="main-header">
+<!--<header class="main-header">
     <h1 class="logo">HANDMADE PIXEL</h1>
     <nav>
         <ul class="nav-links">
@@ -17,21 +17,20 @@
             <li><a href="/login-signup">Login</a></li>
         </ul>
     </nav>
-</header>
+</header> -->
 
-<main class="hero">
-    <canvas class="background-canvas" id="canvas0" default-wasm="texture_metaballs" width="1920" height="980" tabindex=-1></canvas>
+<canvas class="background-canvas" id="canvas0" default-wasm="texture_metaballs" width="1920" height="980" tabindex=0></canvas>
+<div class="hero">
+    <h1 class="hero-title">HANDMADE PIXEL</h1>
+    <div class="hero-buttons">
+        <a href="#learn-more" class="button">Learn More</a>
+        <a href="/login-signup" class="button">Sign Up</a>
+    </div>
+    <div class="scroll-indicator">
+        <span>v</span>
+    </div>
 
-        <h1 class="hero-title">HANDMADE PIXEL</h1>
-        <div class="hero-buttons">
-            <a href="#learn-more" class="button">Learn More</a>
-            <a href="/login-signup" class="button">Sign Up</a>
-        </div>
-        <div class="scroll-indicator">
-            <span>v</span>
-        </div>
-
-</main>
+</div>
 <script type='text/javascript'>
     var Module = {
         locateFile: function(path) {
@@ -48,11 +47,22 @@
         })(),
         arguments: [],
     };
+
     Module.onRuntimeInitialized = function() {
+        const handleUserInput = Module.cwrap('call_registered_function', null, ['string', 'string', 'number', 'number']);
+
         Module.canvases.forEach(canvas => {
             Module.arguments.push(canvas.id);
             Module.arguments.push(canvas.getAttribute('default-wasm'));
-        })
+
+            canvas.addEventListener('click', (event) => {
+                const ptr = Module._malloc(4);
+                Module.setValue(ptr, 1, 'i32');
+                handleUserInput('texture_metaballs', 'set_test', null, ptr);
+
+                Module._free(ptr);
+            });
+        });
 
         console.log(Module.arguments);
     }
