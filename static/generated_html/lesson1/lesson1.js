@@ -39,7 +39,7 @@ if (ENVIRONMENT_IS_NODE) {
 
 // --pre-jses are emitted after the Module integration code, so that they can
 // refer to Module (if they choose; they can also define Module)
-// include: C:\Users\f0710\AppData\Local\Temp\tmpm9_i9fv7.js
+// include: C:\Users\f0710\AppData\Local\Temp\tmpxmpamnrq.js
 
   if (!Module.expectedDataFileDownloads) {
     Module.expectedDataFileDownloads = 0;
@@ -60,8 +60,8 @@ if (ENVIRONMENT_IS_NODE) {
         // web worker
         PACKAGE_PATH = encodeURIComponent(location.pathname.toString().substring(0, location.pathname.toString().lastIndexOf('/')) + '/');
       }
-      var PACKAGE_NAME = './../static/generated_html/home/home.data';
-      var REMOTE_PACKAGE_BASE = 'home.data';
+      var PACKAGE_NAME = './../static/generated_html/lesson1/lesson1.data';
+      var REMOTE_PACKAGE_BASE = 'lesson1.data';
       if (typeof Module['locateFilePackage'] === 'function' && !Module['locateFile']) {
         Module['locateFile'] = Module['locateFilePackage'];
         err('warning: you defined Module.locateFilePackage, that has been renamed to Module.locateFile (using your locateFilePackage for now)');
@@ -196,10 +196,10 @@ Module['FS_createPath']("/data/shaders", "junk", true, true);
           var files = metadata['files'];
           for (var i = 0; i < files.length; ++i) {
             DataRequest.prototype.requests[files[i].filename].onload();
-          }          Module['removeRunDependency']('datafile_./../static/generated_html/home/home.data');
+          }          Module['removeRunDependency']('datafile_./../static/generated_html/lesson1/lesson1.data');
 
       };
-      Module['addRunDependency']('datafile_./../static/generated_html/home/home.data');
+      Module['addRunDependency']('datafile_./../static/generated_html/lesson1/lesson1.data');
 
       if (!Module.preloadResults) Module.preloadResults = {};
 
@@ -224,21 +224,21 @@ Module['FS_createPath']("/data/shaders", "junk", true, true);
 
   })();
 
-// end include: C:\Users\f0710\AppData\Local\Temp\tmpm9_i9fv7.js
-// include: C:\Users\f0710\AppData\Local\Temp\tmpo0btv3fn.js
+// end include: C:\Users\f0710\AppData\Local\Temp\tmpxmpamnrq.js
+// include: C:\Users\f0710\AppData\Local\Temp\tmplxzoloi8.js
 
     // All the pre-js content up to here must remain later on, we need to run
     // it.
     if (Module['$ww'] || (typeof ENVIRONMENT_IS_PTHREAD != 'undefined' && ENVIRONMENT_IS_PTHREAD)) Module['preRun'] = [];
     var necessaryPreJSTasks = Module['preRun'].slice();
-  // end include: C:\Users\f0710\AppData\Local\Temp\tmpo0btv3fn.js
-// include: C:\Users\f0710\AppData\Local\Temp\tmp_rfgubx0.js
+  // end include: C:\Users\f0710\AppData\Local\Temp\tmplxzoloi8.js
+// include: C:\Users\f0710\AppData\Local\Temp\tmp6s__mgvd.js
 
     if (!Module['preRun']) throw 'Module.preRun should exist because file support used it; did a pre-js delete it?';
     necessaryPreJSTasks.forEach((task) => {
       if (Module['preRun'].indexOf(task) < 0) throw 'All preRun tasks that exist before user pre-js code should remain after; did you replace Module or modify Module.preRun?';
     });
-  // end include: C:\Users\f0710\AppData\Local\Temp\tmp_rfgubx0.js
+  // end include: C:\Users\f0710\AppData\Local\Temp\tmp6s__mgvd.js
 
 
 // Sometimes an existing Module object exists with properties
@@ -897,7 +897,7 @@ function createExportWrapper(name, nargs) {
 // include: runtime_exceptions.js
 // end include: runtime_exceptions.js
 function findWasmBinary() {
-    var f = 'home.wasm';
+    var f = 'lesson1.wasm';
     if (!isDataURI(f)) {
       return locateFile(f);
     }
