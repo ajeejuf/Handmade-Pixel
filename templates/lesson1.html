@@ -32,12 +32,10 @@
     <div class="sidebar-box">
       <h2>UNIT 1</h2>
       <ul>
-        <li><a href="#section1">Section 1: What are Metaballs?</a></li>
-        <li><a href="#section2">Section 2: Foundations</a></li>
-        <li><a href="#section3">Section 3: Algorithm Basics</a></li>
-        <li><a href="#section4">Section 4: Algorithm Implementation</a></li>
-        <li><a href="#section5">Section 5: Optimizing & Rendering</a></li>
-        <li><a href="#section6">Section 6: Applications</a></li>
+        <li><a href="/lesson1#section1">METABALLS</a></li>
+        <li><a href="/lesson1#section2">CIRCLES</a></li>
+        <li><a href="/lesson1#section3">IMPLICIT FUNCTIONS</a></li>
+        <li><a href="/lesson2#section1">DEMO</a></li>
       </ul>
     </div>
   </div>
@@ -65,11 +63,203 @@
         Enough with the exposition, lets get right into how one would go about making this.
       </div>
     </section>
-    <section class="sec" id="section2">Section 2</section>
-    <section class="sec" id="section3">Section 3</section>
-    <section class="sec" id="section4">Section 4</section>
-    <section class="sec" id="section5">Section 5</section>
-    <section class="sec" id="section6">Section 6</section>
+    <section class="sec" id="section2">
+      <h2 class="lesson-title">circles</h2>
+
+      <div class="lesson-demo-container">
+        <canvas tabindex="0" class="lesson-demo" id="circle-outline" default-wasm="metaballs0" width="1000" height="600"></canvas>
+      </div>
+
+      <div class="lesson-text formula">
+        Lets start from square one: <strong>circles</strong>. The circles you see bouncing around is all the
+        information the simulation needs to run. Each circle is defined by two main parameters:
+        a position \((x_0, y_0)\) and a radius \(r\).
+      </div>
+
+      <div class="lesson-text">
+        Using these parameters we can get an equation for a circle:
+      </div>
+
+      <div class="lesson-formula formula">
+        \( \sqrt{(x - x_0)^2 + (y - y_0)^2} = r \)
+      </div>
+
+      <div class="lesson-text formula">
+        If we were to frame this as a coding problem, this equation can be viewed as a function. We can input some
+        arbitrary position \((x, y)\) and get the distance between that point and the circle.
+      </div>
+
+      <div class="lesson-formula formula">
+        \( \mathbf{u} = \begin{pmatrix} x \\ y \end{pmatrix}, \mathbf{v} = \begin{pmatrix} x_0 \\ y_0 \end{pmatrix} \)
+      </div>
+
+      <div class="lesson-formula formula">
+        \( distance = |\mathbf{u} - \mathbf{v}| = \sqrt{(x - x_0)^2 + (y - y_0)^2} \)
+      </div>
+
+      <div class="lesson-text formula">
+        In a geometric sense, the left part of this equation is computing the distance from the circle. Equating this to
+        the radius limits the set of points on the circle to those \( r \) units away from its center. This is exactly
+        how we get those circle outlines: pixels that are \( r_i \) units from the \( ith \) circle are colored red.
+      </div>
+
+      <div class="lesson-text formula">
+        With this understanding, we can now start playing around with this equation to get the look that we're going for.
+        The metaballs that we saw in the first simulation were filled. In order to get that effect with the tools we have
+        right now, we'd have to relax that radius constraint to allow distances that are smaller than the radius.
+      </div>
+
+      <div class="lesson-formula formula">
+        \( \sqrt{(x - x_0)^2 + (y - y_0)^2} \leq r \)
+      </div>
+
+      <div class="lesson-text formula">
+        By modifying our equation into an inequality, we now allow distances less than the radius to be "part of" the
+        circle. Although this change is trivial, it introduces the idea of how equation can not only demarcate a
+        perimeter, but it can define a gradiant of sorts.
+      </div>
+    </section>
+    <section class="sec" id="section3">
+      <h2 class="lesson-title">implicit functions</h2>
+
+      <div class="flex-row">
+        <div class="lesson-demo-container">
+          <canvas tabindex="0" class="lesson-demo" id="circle-fill" default-wasm="circle" width="512" height="512"></canvas>
+        </div>
+
+        <div class="flex-col">
+          <h3 class="slider-name">Resolution</h3>
+          <div class="slider">
+            <div class="show-value">
+              <span id="res-value">16</span>
+            </div>
+            <input type="range" id="res-slider" min="3" max="7" value="4" step="1">
+            <div class="range">
+              <div>8</div>
+              <div>128</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex-col">
+          <h3 class="slider-name">Range</h3>
+          <div class="slider">
+            <div class="show-value">
+              <span id="range-value">1.0</span>
+            </div>
+            <input type="range" id="range-slider" min="0.0" max="4.0" value="1.0" step="0.1">
+            <div class="range">
+              <div>0.0</div>
+              <div>4.0</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lesson-text">
+        To get more utility from the circle equation for this problem, we can define it implicitly. We can do this by
+        just moving all the variables to one side of the equation:
+      </div>
+
+      <div class="lesson-formula formula">
+        \(
+        \displaystyle \frac{r^2}{(x - x_0)^2 - (y - y_0)^2} \geq 1
+        \)
+      </div>
+
+      <div class="lesson-text">
+        By squaring both sides and dividing them by the squared distance, we not get this implicit function. This
+        orientation can easily be translated to some function call that takes a radius, a circle position, and some point
+        on the screen. If this value is greater or equal to 1, we can confidently say that this pixel is within a circle.
+      </div>
+      <div class="lesson-formula formula">
+        \(
+        \displaystyle \mathbf{p_c} = \begin{pmatrix} x_0 \\ y_0 \end{pmatrix}, \mathbf{p} = \begin{pmatrix} x \\ y \end{pmatrix}
+        \)
+      </div>
+      <div class="lesson-formula formula">
+        \(
+        \displaystyle f(r, \mathbf{p_c}, \mathbf{p}) \geq 1
+        \)
+      </div>
+
+      <div class="lesson-text formula">
+        The above visualization allows you to see what happens when we mess with the right side of the inequality. As this
+        value increase, pixels need to be closer to the circle to be rendered. When the value gets lower, more pixels are
+        accepted as being "within" the circle. Since we are outputting the result of \( f(r, \mathbf{p_c}, \mathbf{p}) \),
+        when the constraint gets less than one, the pixel becomes less opaque, creating a gradient affect.
+      </div>
+
+      <div class="flex-row">
+        <div class="lesson-demo-container">
+          <canvas tabindex="0" class="lesson-demo" id="two-circle" default-wasm="two_circles" width="640" height="512"></canvas>
+        </div>
+
+        <div class="flex-col">
+          <h3 class="slider-name">Position</h3>
+          <div class="slider">
+            <div class="show-value">
+              <span id="pos-value">0.0</span>
+            </div>
+            <input type="range" id="pos-slider" min="0.0" max="1.0" value="0.0" step="0.01">
+            <div class="range">
+              <div>0.0</div>
+              <div>1.0</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex-col">
+          <h3 class="slider-name">Resolution</h3>
+          <div class="slider">
+            <div class="show-value">
+              <span id="res-value-two">16</span>
+            </div>
+            <input type="range" id="res-slider-two" min="3" max="7" value="4" step="1">
+            <div class="range">
+              <div>8</div>
+              <div>128</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex-col">
+          <h3 class="slider-name">Range</h3>
+          <div class="slider">
+            <div class="show-value">
+              <span id="range-value-two">1.0</span>
+            </div>
+            <input type="range" id="range-slider-two" min="0.0" max="4.0" value="1.0" step="0.1">
+            <div class="range">
+              <div>0.0</div>
+              <div>4.0</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lesson-text formula">
+        Lets start to move closer to metaballs. As seen in the first demo, metaballs are defined by their behavior
+        near other metaballs. We'd need to bring in another ball if we'd like to see how to get that to work.
+      </div>
+
+      <div class="lesson-text formula">
+        As we decrease the constraint, we can see that some pixels start to be influenced by both circles. If we sum up
+        the influences from both circles, some pixels start becoming more opaque when they're between the circles. How we
+        have a new equation:
+      </div>
+
+      <div class="lesson-formula formula">
+        \(
+        \displaystyle \sum_{i=0}^n \frac{r_i^2}{(x - x_i)^2 + (y - y_i)^2} \geq 1
+        \)
+      </div>
+
+      <div class="lesson-text formula">
+        This equation is the basis for metaball simulations. Add the influence of all the metaballs and keep the values
+        that exceed a certain threshold.
+      </div>
+    </section>
   </div>
 </div>
 </body>
@@ -133,6 +323,32 @@
     }
     console.log('Click event target:', e.target);
   }, false);
+
+  document.getElementById("res-slider").addEventListener('change', (event) => {
+    let value_el =  document.getElementById("res-value");
+    value_el.classList.remove("active");
+  });
+
+  document.getElementById("range-slider").addEventListener('change', (event) => {
+    let value_el =  document.getElementById("range-value");
+    value_el.classList.remove("active");
+  });
+
+  document.getElementById("pos-slider").addEventListener('change', (event) => {
+    let value_el =  document.getElementById("pos-value");
+    value_el.classList.remove("active");
+  });
+
+  document.getElementById("res-slider-two").addEventListener('change', (event) => {
+    let value_el =  document.getElementById("res-value-two");
+    value_el.classList.remove("active");
+  });
+
+  document.getElementById("range-slider-two").addEventListener('change', (event) => {
+    let value_el =  document.getElementById("range-value-two");
+    value_el.classList.remove("active");
+  });
+
 </script>
 <script type='text/javascript'>
   let pause_demo = 0;
@@ -160,26 +376,101 @@
       Module.arguments.push(canvas.getAttribute('default-wasm'));
     });
 
-    let canvas = document.querySelector("#intro-demo");
+    let intro_canvas = document.querySelector("#intro-demo");
+    let fill_canvas = document.querySelector("#circle-fill");
+    let two_circle_canvas = document.querySelector("#two-circle")
 
-    setTimeout(() => {
-      const resPtr = Module._malloc(4);
-      Module.setValue(resPtr, canvas.width, 'i32');
-      handleUserInput(canvas.id, 'set_res', null, resPtr);
-      Module._free(resPtr);
-    }, 100)
-
-    canvas.addEventListener('click', () => {
+    intro_canvas.addEventListener('click', () => {
       pause_demo = 1 - pause_demo;
 
       const ptr = Module._malloc(4);
       Module.setValue(ptr, pause_demo, 'i32');
-      handleUserInput(canvas.id, 'set_pause', null, ptr);
+      handleUserInput(intro_canvas.id, 'set_pause', null, ptr);
 
       Module._free(ptr);
 
       console.log("click");
     }, false);
+
+    document.getElementById("res-slider").addEventListener('input', (event) => {
+      let val = event.target.value;
+      let max = event.target.max;
+      let min = event.target.min;
+      let value_el =  document.getElementById("res-value");
+      value_el.innerText = 2**val;
+      value_el.style.left = `${((val-min)/(max-min))*100}%`
+      value_el.classList.add("active");
+
+      const ptr = Module._malloc(4);
+      Module.setValue(ptr, 2**val, 'i32');
+      handleUserInput(fill_canvas.id, 'set_res', null, ptr);
+
+      Module._free(ptr);
+    });
+
+    document.getElementById("range-slider").addEventListener('input', (event) => {
+      let val = event.target.value;
+      let max = event.target.max;
+      let min = event.target.min;
+      let value_el =  document.getElementById("range-value");
+      value_el.innerText = val;
+      value_el.style.left = `${((val-min)/(max-min))*100}%`
+      value_el.classList.add("active");
+
+      const ptr = Module._malloc(4);
+      Module.HEAPF32[ptr / Float32Array.BYTES_PER_ELEMENT] = val;
+      handleUserInput(fill_canvas.id, 'set_range', null, ptr);
+
+      Module._free(ptr);
+    });
+
+    document.getElementById("pos-slider").addEventListener('input', (event) => {
+      let val = event.target.value;
+      let max = event.target.max;
+      let min = event.target.min;
+      let value_el =  document.getElementById("pos-value");
+      value_el.innerText = val;
+      value_el.style.left = `${((val-min)/(max-min))*100}%`
+      value_el.classList.add("active");
+
+      const ptr = Module._malloc(4);
+      Module.HEAPF32[ptr / Float32Array.BYTES_PER_ELEMENT] = val;
+      handleUserInput(two_circle_canvas.id, 'set_pos', null, ptr);
+
+      Module._free(ptr);
+    });
+
+    document.getElementById("res-slider-two").addEventListener('input', (event) => {
+      let val = event.target.value;
+      let max = event.target.max;
+      let min = event.target.min;
+      let value_el =  document.getElementById("res-value-two");
+      value_el.innerText = 2**val;
+      value_el.style.left = `${((val-min)/(max-min))*100}%`
+      value_el.classList.add("active");
+
+      const ptr = Module._malloc(4);
+      Module.setValue(ptr, 2**val, 'i32');
+      handleUserInput(two_circle_canvas.id, 'set_res', null, ptr);
+
+      Module._free(ptr);
+    });
+
+    document.getElementById("range-slider-two").addEventListener('input', (event) => {
+      let val = event.target.value;
+      let max = event.target.max;
+      let min = event.target.min;
+      let value_el =  document.getElementById("range-value-two");
+      value_el.innerText = val;
+      value_el.style.left = `${((val-min)/(max-min))*100}%`
+      value_el.classList.add("active");
+
+      const ptr = Module._malloc(4);
+      Module.HEAPF32[ptr / Float32Array.BYTES_PER_ELEMENT] = val;
+      handleUserInput(two_circle_canvas.id, 'set_range', null, ptr);
+
+      Module._free(ptr);
+    });
 
     console.log(Module.arguments);
   }

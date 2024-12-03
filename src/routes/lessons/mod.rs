@@ -4,7 +4,7 @@ use actix_web::http::header::ContentType;
 pub async  fn lessons() -> HttpResponse {
     HttpResponse::Ok()
         .content_type(ContentType::html())
-        .body(include_str!("lessons.html"))
+        .body(include_str!("../../../static/generated_html/lessons/lessons.html"))
 }
 
 pub async  fn lesson1() -> HttpResponse {
@@ -16,7 +16,7 @@ pub async  fn lesson1() -> HttpResponse {
 pub async  fn lesson2() -> HttpResponse {
     HttpResponse::Ok()
         .content_type(ContentType::html())
-        .body(include_str!("lesson2.html"))
+        .body(include_str!("../../../static/generated_html/lesson2/lesson2.html"))
 }
 
 pub async  fn lesson3() -> HttpResponse {
