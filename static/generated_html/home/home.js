@@ -39,7 +39,7 @@ if (ENVIRONMENT_IS_NODE) {
 
 // --pre-jses are emitted after the Module integration code, so that they can
 // refer to Module (if they choose; they can also define Module)
-// include: C:\Users\f0710\AppData\Local\Temp\tmpm9_i9fv7.js
+// include: C:\Users\f0710\AppData\Local\Temp\tmpfv1euwr2.js
 
   if (!Module.expectedDataFileDownloads) {
     Module.expectedDataFileDownloads = 0;
@@ -220,25 +220,25 @@ Module['FS_createPath']("/data/shaders", "junk", true, true);
     }
 
     }
-    loadPackage({"files": [{"filename": "/data/fonts/hack/Hack-Bold.ttf", "start": 0, "end": 317628}, {"filename": "/data/fonts/hack/Hack-BoldItalic.ttf", "start": 317628, "end": 639916}, {"filename": "/data/fonts/hack/Hack-Italic.ttf", "start": 639916, "end": 956072}, {"filename": "/data/fonts/hack/Hack-Regular.ttf", "start": 956072, "end": 1265480}, {"filename": "/data/shaders/circle.wgsl", "start": 1265480, "end": 1266640}, {"filename": "/data/shaders/clear.wgsl", "start": 1266640, "end": 1266953}, {"filename": "/data/shaders/framebuffer.wgsl", "start": 1266953, "end": 1267536}, {"filename": "/data/shaders/gaussian_blur.wgsl", "start": 1267536, "end": 1268665}, {"filename": "/data/shaders/gpu_metaballs.wgsl", "start": 1268665, "end": 1269918}, {"filename": "/data/shaders/grid.wgsl", "start": 1269918, "end": 1270481}, {"filename": "/data/shaders/junk/frag.glsl", "start": 1270481, "end": 1271659}, {"filename": "/data/shaders/junk/inst_frag.glsl", "start": 1271659, "end": 1273983}, {"filename": "/data/shaders/junk/inst_vert.glsl", "start": 1273983, "end": 1275008}, {"filename": "/data/shaders/junk/planet_frag.glsl", "start": 1275008, "end": 1277330}, {"filename": "/data/shaders/junk/planet_vert.glsl", "start": 1277330, "end": 1278355}, {"filename": "/data/shaders/junk/sun_frag.glsl", "start": 1278355, "end": 1279451}, {"filename": "/data/shaders/junk/sun_vert.glsl", "start": 1279451, "end": 1279917}, {"filename": "/data/shaders/junk/vert.glsl", "start": 1279917, "end": 1280417}, {"filename": "/data/shaders/metaball_distance_field.wgsl", "start": 1280417, "end": 1281375}, {"filename": "/data/shaders/metaball_filter.wgsl", "start": 1281375, "end": 1282135}, {"filename": "/data/shaders/metaballs.wgsl", "start": 1282135, "end": 1283040}, {"filename": "/data/shaders/render_circle.wgsl", "start": 1283040, "end": 1283951}, {"filename": "/data/shaders/shader.wgsl", "start": 1283951, "end": 1284653}, {"filename": "/data/shaders/text_test.wgsl", "start": 1284653, "end": 1285411}, {"filename": "/ems_wgpu.wasm", "start": 1285411, "end": 1344415}, {"filename": "/metaballs.wasm", "start": 1344415, "end": 1423901}, {"filename": "/texture_metaballs.wasm", "start": 1423901, "end": 1488172}], "remote_package_size": 1488172});
+    loadPackage({"files": [{"filename": "/circle.wasm", "start": 0, "end": 73963}, {"filename": "/data/fonts/hack/Hack-Bold.ttf", "start": 73963, "end": 391591}, {"filename": "/data/fonts/hack/Hack-BoldItalic.ttf", "start": 391591, "end": 713879}, {"filename": "/data/fonts/hack/Hack-Italic.ttf", "start": 713879, "end": 1030035}, {"filename": "/data/fonts/hack/Hack-Regular.ttf", "start": 1030035, "end": 1339443}, {"filename": "/data/shaders/circle.wgsl", "start": 1339443, "end": 1340603}, {"filename": "/data/shaders/clear.wgsl", "start": 1340603, "end": 1340916}, {"filename": "/data/shaders/framebuffer.wgsl", "start": 1340916, "end": 1341499}, {"filename": "/data/shaders/gaussian_blur.wgsl", "start": 1341499, "end": 1342628}, {"filename": "/data/shaders/gpu_circle.wgsl", "start": 1342628, "end": 1343892}, {"filename": "/data/shaders/gpu_metaballs.wgsl", "start": 1343892, "end": 1345145}, {"filename": "/data/shaders/grid.wgsl", "start": 1345145, "end": 1345820}, {"filename": "/data/shaders/junk/frag.glsl", "start": 1345820, "end": 1346998}, {"filename": "/data/shaders/junk/inst_frag.glsl", "start": 1346998, "end": 1349322}, {"filename": "/data/shaders/junk/inst_vert.glsl", "start": 1349322, "end": 1350347}, {"filename": "/data/shaders/junk/planet_frag.glsl", "start": 1350347, "end": 1352669}, {"filename": "/data/shaders/junk/planet_vert.glsl", "start": 1352669, "end": 1353694}, {"filename": "/data/shaders/junk/sun_frag.glsl", "start": 1353694, "end": 1354790}, {"filename": "/data/shaders/junk/sun_vert.glsl", "start": 1354790, "end": 1355256}, {"filename": "/data/shaders/junk/vert.glsl", "start": 1355256, "end": 1355756}, {"filename": "/data/shaders/metaball_distance_field.wgsl", "start": 1355756, "end": 1356714}, {"filename": "/data/shaders/metaball_filter.wgsl", "start": 1356714, "end": 1357474}, {"filename": "/data/shaders/metaballs.wgsl", "start": 1357474, "end": 1358379}, {"filename": "/data/shaders/render_circle.wgsl", "start": 1358379, "end": 1359290}, {"filename": "/data/shaders/shader.wgsl", "start": 1359290, "end": 1359992}, {"filename": "/data/shaders/text_test.wgsl", "start": 1359992, "end": 1360817}, {"filename": "/ems_wgpu.wasm", "start": 1360817, "end": 1421824}, {"filename": "/metaballs.wasm", "start": 1421824, "end": 1500544}, {"filename": "/metaballs0.wasm", "start": 1500544, "end": 1566897}, {"filename": "/metaballs1.wasm", "start": 1566897, "end": 1649227}, {"filename": "/texture_metaballs.wasm", "start": 1649227, "end": 1713533}, {"filename": "/two_circles.wasm", "start": 1713533, "end": 1788101}], "remote_package_size": 1788101});
 
   })();
 
-// end include: C:\Users\f0710\AppData\Local\Temp\tmpm9_i9fv7.js
-// include: C:\Users\f0710\AppData\Local\Temp\tmpo0btv3fn.js
+// end include: C:\Users\f0710\AppData\Local\Temp\tmpfv1euwr2.js
+// include: C:\Users\f0710\AppData\Local\Temp\tmpv0quyahw.js
 
     // All the pre-js content up to here must remain later on, we need to run
     // it.
     if (Module['$ww'] || (typeof ENVIRONMENT_IS_PTHREAD != 'undefined' && ENVIRONMENT_IS_PTHREAD)) Module['preRun'] = [];
     var necessaryPreJSTasks = Module['preRun'].slice();
-  // end include: C:\Users\f0710\AppData\Local\Temp\tmpo0btv3fn.js
-// include: C:\Users\f0710\AppData\Local\Temp\tmp_rfgubx0.js
+  // end include: C:\Users\f0710\AppData\Local\Temp\tmpv0quyahw.js
+// include: C:\Users\f0710\AppData\Local\Temp\tmpy5pypsf0.js
 
     if (!Module['preRun']) throw 'Module.preRun should exist because file support used it; did a pre-js delete it?';
     necessaryPreJSTasks.forEach((task) => {
       if (Module['preRun'].indexOf(task) < 0) throw 'All preRun tasks that exist before user pre-js code should remain after; did you replace Module or modify Module.preRun?';
     });
-  // end include: C:\Users\f0710\AppData\Local\Temp\tmp_rfgubx0.js
+  // end include: C:\Users\f0710\AppData\Local\Temp\tmpy5pypsf0.js
 
 
 // Sometimes an existing Module object exists with properties
@@ -579,7 +579,7 @@ assert(typeof Int32Array != 'undefined' && typeof Float64Array !== 'undefined' &
     wasmMemory = Module['wasmMemory'];
   } else
   {
-    var INITIAL_MEMORY = Module['INITIAL_MEMORY'] || 134217728;legacyModuleProp('INITIAL_MEMORY', 'INITIAL_MEMORY');
+    var INITIAL_MEMORY = Module['INITIAL_MEMORY'] || 419430400;legacyModuleProp('INITIAL_MEMORY', 'INITIAL_MEMORY');
 
     assert(INITIAL_MEMORY >= 33554432, 'INITIAL_MEMORY should be larger than STACK_SIZE, was ' + INITIAL_MEMORY + '! (STACK_SIZE=' + 33554432 + ')');
     wasmMemory = new WebAssembly.Memory({
@@ -1443,7 +1443,7 @@ var ASM_CONSTS = {
   
   
   
-  var ___heap_base = 33568464;
+  var ___heap_base = 33567040;
   
   var zeroMemory = (address, size) => {
       HEAPU8.fill(0, address, address + size);
@@ -2355,11 +2355,11 @@ var ASM_CONSTS = {
 
   var ___memory_base = new WebAssembly.Global({'value': 'i32', 'mutable': false}, 1024);
 
-  var ___stack_high = 33568464;
+  var ___stack_high = 33567040;
 
-  var ___stack_low = 14032;
+  var ___stack_low = 12608;
 
-  var ___stack_pointer = new WebAssembly.Global({'value': 'i32', 'mutable': true}, 33568464);
+  var ___stack_pointer = new WebAssembly.Global({'value': 'i32', 'mutable': true}, 33567040);
 
   /** @suppress {duplicate } */
   function syscallGetVarargI() {
@@ -7728,7 +7728,7 @@ var ASM_CONSTS = {
   Disabled:3,
   },
   state:0,
-  StackSize:320000000,
+  StackSize:4096,
   currData:null,
   handleSleepReturnValue:0,
   exportCallStack:[],
@@ -9592,7 +9592,7 @@ var _asyncify_start_unwind = createExportWrapper('asyncify_start_unwind', 1);
 var _asyncify_stop_unwind = createExportWrapper('asyncify_stop_unwind', 0);
 var _asyncify_start_rewind = createExportWrapper('asyncify_start_rewind', 1);
 var _asyncify_stop_rewind = createExportWrapper('asyncify_stop_rewind', 0);
-var _stderr = Module['_stderr'] = 12200;
+var _stderr = Module['_stderr'] = 10776;
 
 // include: postamble.js
 // === Auto-generated postamble setup entry stuff ===
@@ -9944,7 +9944,7 @@ function stackCheckInit() {
   // This is normally called automatically during __wasm_call_ctors but need to
   // get these values before even running any of the ctors so we call it redundantly
   // here.
-  _emscripten_stack_set_limits(33568464 , 14032);
+  _emscripten_stack_set_limits(33567040 , 12608);
   // TODO(sbc): Move writeStackCookie to native to to avoid this.
   writeStackCookie();
 }

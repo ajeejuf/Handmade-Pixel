@@ -1,0 +1,78 @@
+<!-- This is the lessons page -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/static/lessons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Lessons - Handmade Pixel</title>
+</head>
+<body>
+<header class="main-header">
+    <h1 class="logo">HANDMADE PIXEL</h1>
+    <nav>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/lessons">Lessons</a></li>
+            <li><a href="/login-signup">Login</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Main Content -->
+<main class="main-content">
+    <div class="lessons-container">
+        <a href="/lesson1">
+            <div class="lesson">
+                <div class="lesson-content">
+                    <canvas class="lesson-canvas" id="demoCanvas" default-wasm="metaballs" width="600" height="350"></canvas>
+                    <div class="lesson-info">
+                        <h2 class="lesson-header">Metaballs</h2>
+                        <p class="lesson-description">This is a small description of the lesson. It gives a brief overview of the content or what the demo on the left demonstrates.</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+        <!--<div class="lesson">
+            <div class="lesson-content">
+                <canvas class="lesson-canvas" id="demoCanvas0" default-wasm="metaballs" width="600" height="350"></canvas>
+                <div class="lesson-info">
+                    <h2 class="lesson-header">Lesson Title</h2>
+                    <p class="lesson-description">This is a small description of the lesson. It gives a brief overview of the content or what the demo on the left demonstrates.</p>
+                </div>
+            </div>
+        </div>-->
+    </div>
+</main>
+
+</body>
+<script type='text/javascript'>
+    var Module = {
+        locateFile: function(path) {
+            // Custom logic to resolve the path
+            if (path.endsWith('.js') || path.endsWith('.data') || path.endsWith('.wasm')) {
+                return '/static/generated_html/lessons/' + path;
+            }
+            return path;
+        },
+        canvases: (() => {
+            var canvases = document.querySelectorAll('canvas');
+
+            return canvases;
+        })(),
+        arguments: [],
+    };
+
+    Module.onRuntimeInitialized = function() {
+        Module.canvases.forEach(canvas => {
+            Module.arguments.push(canvas.id);
+            Module.arguments.push(canvas.getAttribute('default-wasm'));
+        });
+
+        console.log(Module.arguments);
+    }
+</script>
+<base href="/static/generated_html/lessons/">
+<script async type="text/javascript" src="lessons.js"></script>

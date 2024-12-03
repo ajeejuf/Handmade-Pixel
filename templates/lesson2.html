@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/static/lessons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js"></script>
+    <title>Lessons - Handmade Pixel</title>
+</head>
+<body>
+<header class="main-header">
+    <h1 class="logo">HANDMADE PIXEL</h1>
+    <nav>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/lessons">Lessons</a></li>
+            <li><a href="/login-signup">Login</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="grid-container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-icon">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+
+        <div class="sidebar-box">
+            <h2>UNIT 1</h2>
+            <ul>
+                <li><a href="/lesson1#section1">METABALLS</a></li>
+                <li><a href="/lesson1#section2">CIRCLES</a></li>
+                <li><a href="/lesson1#section3">IMPLICIT FUNCTIONS</a></li>
+                <li><a href="/lesson2#section1">DEMO</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="sec-container">
+        <section class="sec" id="section1">
+          <h2 class="lesson-title">demo</h2>
+          <div class="flex-row">
+            <div class="lesson-demo-container">
+              <canvas tabindex="0" class="lesson-demo" id="metaball-demo" default-wasm="metaballs1" width="1024" height="600"></canvas>
+            </div>
+
+              <div class="flex-col">
+                  <h3 class="slider-name">Grid</h3>
+                  <div class="slider">
+                      <div class="show-value">
+                          <span id="grid-value-demo">32</span>
+                      </div>
+                      <input type="range" id="grid-slider-demo" min="0" max="1" value="1" step="1">
+                      <div class="range">
+                          <div>OFF</div>
+                          <div>ON</div>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="flex-col">
+                  <h3 class="slider-name">Debug Circles</h3>
+                  <div class="slider">
+                      <div class="show-value">
+                          <span id="circle-value-demo">32</span>
+                      </div>
+                      <input type="range" id="circle-slider-demo" min="0" max="1" value="1" step="1">
+                      <div class="range">
+                          <div>OFF</div>
+                          <div>ON</div>
+                      </div>
+                  </div>
+              </div>
+
+            <div class="flex-col">
+              <h3 class="slider-name">Resolution</h3>
+              <div class="slider">
+                <div class="show-value">
+                  <span id="res-value-demo">32</span>
+                </div>
+                <input type="range" id="res-slider-demo" min="3" max="10" value="5" step="1">
+                <div class="range">
+                  <div>8</div>
+                  <div>1024</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="lesson-text formula">
+            Executing the formula on each pixel on the screen will give us the results that we're looking for. You
+            can mess around with the demo's resolution to get a better idea of whats happening per-pixel.
+        </div>
+
+        <div class="lesson-text formula">
+            This has been a very surface level analysis of the implementation of metaballs. There are many different
+            optimizations that can help minimize computation cost. With the algorithm we reviewed, the cost is dependent
+            on the resolution of the screen and the number of metaballs. Applying this algorithm on an entire screen
+            would be impossible without the use of compute shaders and even then it scales tremendously poorly.
+        </div>
+
+        <div class="lesson-text formula">
+            Algorithms like marching squares can help reduce the cost by artificially reducing the resolution required
+            to render a clean image. For the home page of the sight, the metaballs are actually distance field textures
+            that are rendered onto the screen. The process is identical to the method discussed here but it only
+            requires precomputed distance values for a unit circle.
+        </div>
+    </div>
+</div>
+</body>
+<script type='text/javascript'>
+    let icon = document.querySelector(".sidebar-icon");
+    let box = document.querySelector(".sidebar-box");
+    let sections = document.querySelector(".sec-container");
+    let canvases = document.querySelectorAll(".lesson-demo");
+
+    const originalSize = {};
+    canvases.forEach(canvas => {
+        originalSize[canvas.id] = canvas.width
+    });
+
+    const observer = new ResizeObserver(entries => {
+        for (let entry of entries) {
+            const { width } = entry.contentRect;
+            const target = entry.target;
+            const canvases = target.querySelectorAll(".lesson-demo");
+
+            canvases.forEach(canvas => {
+                if (canvas.width > width) {
+                    let aspect_ratio = canvas.height / canvas.width;
+                    canvas.width = width;
+                    canvas.height = width * aspect_ratio;
+                }
+                else if (canvas.width < originalSize[canvas.id])
+                {
+                    let aspect_ratio = canvas.height / canvas.width;
+                    canvas.width = width;
+                    canvas.height = width * aspect_ratio;
+                }
+                else
+                {
+                    let aspect_ratio = canvas.height / canvas.width;
+                    canvas.width = originalSize[canvas.id];
+                    canvas.height = originalSize[canvas.id] * aspect_ratio;
+                }
+            });
+        }
+    })
+
+    observer.observe(sections);
+
+    icon.onclick = function() {
+        icon.classList.toggle("active");
+        box.classList.toggle("active");
+
+        let secStyle = getComputedStyle(sections)
+        if (parseInt(secStyle.marginLeft) > 0)
+            sections.style.marginLeft = "0px";
+        else
+            sections.style.marginLeft = "300px";
+    }
+
+    document.addEventListener('click', (e) => {
+        if (!icon.contains(e.target) && !box.contains(e.target)) {
+            icon.classList.remove("active");
+            box.classList.remove("active");
+            sections.style.marginLeft = "0px";
+        }
+        console.log('Click event target:', e.target);
+    }, false);
+</script>
+<script type='text/javascript'>
+    let handleUserInput = null;
+    let demo_pause = 0;
+
+    var Module = {
+        locateFile: function(path) {
+            // Custom logic to resolve the path
+            if (path.endsWith('.js') || path.endsWith('.data') || path.endsWith('.wasm')) {
+                return '/static/generated_html/lesson2/' + path;
+            }
+            return path;
+        },
+        canvases: (() => {
+            return document.querySelectorAll('canvas');
+        })(),
+        arguments: [],
+    };
+
+    Module.onRuntimeInitialized = function() {
+        handleUserInput = Module.cwrap('call_registered_function', null, ['string', 'string', 'number', 'number']);
+
+        Module.canvases.forEach(canvas => {
+            Module.arguments.push(canvas.id);
+            Module.arguments.push(canvas.getAttribute('default-wasm'));
+        });
+
+        let demo_canvas = document.querySelector("#metaball-demo");
+
+        demo_canvas.addEventListener('click', () => {
+            demo_pause = 1 - demo_pause;
+
+            const ptr = Module._malloc(4);
+            Module.setValue(ptr, demo_pause, 'i32');
+            handleUserInput(demo_canvas.id, 'set_pause', null, ptr);
+
+            Module._free(ptr);
+
+            console.log("click");
+        }, false);
+
+        document.getElementById("grid-slider-demo").addEventListener('input', (event) => {
+            let val = event.target.value;
+            let max = event.target.max;
+            let min = event.target.min;
+            let value_el =  document.getElementById("grid-value-demo");
+            value_el.innerText = val;
+            value_el.style.left = `${((val-min)/(max-min))*100}%`
+            value_el.classList.add("active");
+
+            const ptr = Module._malloc(4);
+            Module.setValue(ptr, val, 'i32');
+            handleUserInput(demo_canvas.id, 'set_grid', null, ptr);
+
+            Module._free(ptr);
+        });
+
+        document.getElementById("circle-slider-demo").addEventListener('input', (event) => {
+            let val = event.target.value;
+            let max = event.target.max;
+            let min = event.target.min;
+            let value_el =  document.getElementById("circle-value-demo");
+            value_el.innerText = val;
+            value_el.style.left = `${((val-min)/(max-min))*100}%`
+            value_el.classList.add("active");
+
+            const ptr = Module._malloc(4);
+            Module.setValue(ptr, val, 'i32');
+            handleUserInput(demo_canvas.id, 'set_debug_circles', null, ptr);
+
+            Module._free(ptr);
+        });
+
+        document.getElementById("res-slider-demo").addEventListener('input', (event) => {
+            let val = event.target.value;
+            let max = event.target.max;
+            let min = event.target.min;
+            let value_el =  document.getElementById("res-value-demo");
+            value_el.innerText = 2**val;
+            value_el.style.left = `${((val-min)/(max-min))*100}%`
+            value_el.classList.add("active");
+
+            const ptr = Module._malloc(4);
+            Module.setValue(ptr, 2**val, 'i32');
+            handleUserInput(demo_canvas.id, 'set_res', null, ptr);
+
+            Module._free(ptr);
+        });
+
+        document.getElementById("grid-slider-demo").addEventListener('change', (event) => {
+            let value_el =  document.getElementById("grid-value-demo");
+            value_el.classList.remove("active");
+        });
+
+        document.getElementById("circle-slider-demo").addEventListener('change', (event) => {
+            let value_el =  document.getElementById("circle-value-demo");
+            value_el.classList.remove("active");
+        });
+
+        document.getElementById("res-slider-demo").addEventListener('change', (event) => {
+            let value_el =  document.getElementById("res-value-demo");
+            value_el.classList.remove("active");
+        });
+
+        console.log(Module.arguments);
+    }
+</script>
+<base href="/static/generated_html/lesson2/">
+{{{ SCRIPT }}}
